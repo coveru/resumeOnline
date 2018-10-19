@@ -3,19 +3,36 @@
 <head>
   <meta charset="utf-8">
   <title>徐志贤的简历</title>
-  <link rel="stylesheet" href="./a.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_859799_uvewtnf6tl.js"></script>
   <style type="text/css">
+   
     .icon {
        width: 1em; height: 1em;
        vertical-align: -0.15em;
        fill: currentColor;
        overflow: hidden;
     }
+    .site-welcome{
+     display: none;
+     position: fixed;
+     top: 0; left: 0; width: 100%; height: 100%;
+     background: #888;
+     z-index: 1;
+     justify-content: center;
+     align-items: center;
+    }
+    .site-welcome.active{
+      display: flex;
+    }
 </style>
 </head>
 <body>
-    
+  <div id="siteWelcome"  class="site-welcome active">
+      <div class="loading"></div> 
+  </div>
+   
   <div class="topNavBar">
     <div class="topNavBar-inner clearfix">
     <a class="logo" href="#" alt="logo" style="float:left">
@@ -167,6 +184,12 @@
         </div>
         </div>
      
-    </section>             
+    </section>   
+    <script>
+      setTimeout(function(){
+        siteWelcome.classList.remove('active')
+      },2000)
+       
+    </script>          
 </body>
 </html>
